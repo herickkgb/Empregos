@@ -2,7 +2,7 @@
 
 ## Introdução
 
-Esta documentação detalha as funcionalidades da API de Empregos, uma ferramenta projetada para facilitar o gerenciamento e a procura de oportunidades de emprego. A API oferece funcionalidades chave para criação, consulta, atualização e remoção de vagas, com foco na eficiência e facilidade de uso.
+Esta documentação detalha as funcionalidades da API de Empregos, ideal para a gestão e procura de vagas de emprego. A API oferece operações essenciais como criação, consulta detalhada, atualização e remoção de vagas.
 
 ## Funcionalidades e Respostas da API
 
@@ -29,16 +29,37 @@ Confirmação da criação da vaga.
 
 ### 2. Consulta de Vagas (GET)
 
-#### Endpoint:
+#### Endpoint para Listagem Completa:
 ```
 GET /empregos/alljobs
 ```
 
 #### Detalhes:
-Este endpoint retorna uma lista paginada de vagas, com um máximo de 20 vagas por requisição. É ideal para visualizar todas as oportunidades disponíveis de forma organizada e eficiente.
+Retorna uma lista paginada de vagas, com um máximo de 20 vagas por requisição.
+
+#### Endpoint para Detalhes da Vaga:
+```
+GET /empregos/{id}
+```
+
+#### Detalhes:
+Retorna os detalhes de uma vaga específica, usando o ID da vaga como parâmetro.
+
+#### Exemplo de Uso:
+```
+GET /empregos/123
+```
 
 #### Resposta Esperada:
-Lista paginada de vagas disponíveis, incluindo informações detalhadas de cada vaga.
+```json
+{
+  "nome": "Desenvolvedor Front-end",
+  "descricao": "Desenvolver interfaces de usuário...",
+  "competencias": [
+    {"id": 3, "nome": "JavaScript"}
+  ]
+}
+```
 
 ### 3. Atualização de Vagas (PUT)
 
@@ -74,4 +95,4 @@ Confirmação da remoção da vaga.
 
 ## Conclusão
 
-Desenvolvi a API de Empregos para aprimorar meus conhecimentos em APIs REST com Java, proporcionando uma plataforma abrangente para administração de oportunidades de trabalho.
+Desenvolvida para aprimorar conhecimentos em APIs REST com Java, a API de Empregos é uma plataforma abrangente para a administração de oportunidades de trabalho, conectando empresas e candidatos de forma eficaz. Para mais informações, acesse nossa [documentação completa](#).
